@@ -1,0 +1,11 @@
+<h1 class="text-yellow-500 text-bold">All Article</h1>
+
+<p class="">Messages: <%= @message %></p>
+
+<ul class="list-disc pl-5">
+    <% @articles.each do |ar| %>
+    <li>
+        <%= link_to ar.title,  article_detail_path(ar), class: "text-bold text-blue-500" %>
+    </li>
+    <% end %>
+</ul>

@@ -1,0 +1,27 @@
+<h1>Create Article</h1>
+<%# must have url jf defaut is lead to articles_path %>
+<%= form_with model: @article,  url: "/create_article" do |form| %>
+    <% if form.object.errors.any? %>
+        <ul class="list-disc pl-5"><% form.object.errors.full_messages.each do |error|%>
+            <li><%= error %></li>
+        <%end%>
+        </ul>
+    <% end %>
+    <div>
+        <div>
+            <%= form.label :title %>
+            <%= form.text_field :title%>
+        </div>
+        <div>
+            <%= form.label :description %>
+            <%= form.text_field :description %>
+        </div>
+        <div>
+            <%= form.label :authur %>
+            <%= form.text_field :authur %>
+        </div>
+        <div>
+            <%= form.button%>
+        </div>
+    </div>
+<% end %>
